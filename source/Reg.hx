@@ -1,6 +1,7 @@
 package;
 
 import flixel.util.FlxSave;
+import flixel.FlxSprite;
 import flixel.animation.FlxAnimationController;
 
 /**
@@ -10,12 +11,27 @@ import flixel.animation.FlxAnimationController;
  */
 class Reg
 {
-
-	public static inline var ANIM_PLAYER_FILE:String = "images/testAnim.png";
+	public static inline var ANIM_PLAYER_FILE:String = "assets/images/testAnim.png";
 	public static var levels:Array<Dynamic> = [];
+	/**
+	 * Generic level variable that can be used for cross-state stuff.
+	 * Example usage: Storing the current level number.
+	 */
 	public static var level:Int = 0;
+	/**
+	 * Generic scores Array that can be used for cross-state stuff.
+	 * Example usage: Storing the scores for level.
+	 */
 	public static var scores:Array<Dynamic> = [];
+	/**
+	 * Generic score variable that can be used for cross-state stuff.
+	 * Example usage: Storing the current score.
+	 */
 	public static var score:Int = 0;
+	/**
+	 * Generic bucket for storing different FlxSaves.
+	 * Especially useful for setting up multiple save slots.
+	 */
 	public static var saves:Array<FlxSave> = [];
 
 	public static var test:Int;
@@ -28,12 +44,6 @@ class Reg
 	public static function getPlayerAnim(Player:FlxSprite){
 		Player.loadGraphic(ANIM_PLAYER_FILE, true, 8);
 		Player.animation.add("test", [0,1,2,3,4], 30);
-		/*Player.animation.add("run", [1, 2, 3, 0], 12);
-		Player.animation.add("jump", [4]);
-		Player.animation.add("idle_up", [5]);
-		Player.animation.add("run_up", [6, 7, 8, 5], 12);
-		Player.animation.add("jump_up", [9]);
-		Player.animation.add("jump_down", [10]);*/
 	}
 
 }
