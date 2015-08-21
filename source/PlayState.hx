@@ -12,7 +12,7 @@ import flixel.util.FlxMath;
  */
 class PlayState extends FlxState
 {
-	public var player:FlxSprite;
+	public var player:Player;
 
 	/**
 	 * Function that is called up when to state is created to set it up. 
@@ -21,12 +21,7 @@ class PlayState extends FlxState
 	{
 		super.create();
 
-		// new Reg();
-
-		player = new FlxSprite(0,0);
-		Reg.getPlayerAnim(player);
-
-		player.animation.play("test");
+		player = new Player(0,0);
 
 		add(player);
 	}
